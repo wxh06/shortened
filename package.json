@@ -1,0 +1,38 @@
+{
+  "name": "shortened",
+  "version": "0.0.1",
+  "description": "URL Shortener",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangxinhe2006/shortened.git"
+  },
+  "keywords": [
+    "url",
+    "url-shortener",
+    "url-shortening",
+    "socket.io",
+    "express"
+  ],
+  "author": "汪心禾",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wangxinhe2006/shortened/issues"
+  },
+  "homepage": "https://github.com/wangxinhe2006/shortened#readme",
+  "dependencies": {
+    "express": "^4.16.1",
+    "morgan": "^1.9.1",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0 || ^6.1.0",
+    "eslint-config-airbnb-base": "latest",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
