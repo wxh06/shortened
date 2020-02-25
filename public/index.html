@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shortened</title>
+  </head>
+  <body>
+    <form>
+      <input id="url" type="url" autocomplete="off" required />
+      <button id="submit">Shorten</button>
+    </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascripts/jquery.slim.min.js"></script>
+    <script>
+      var socket = io();
+      $(document).ready(function () {
+        $('form').submit(function (event) {
+          event.preventDefault();
+          socket.emit('submit', $('#url').val());
+          $('form').find('input, button').prop('disabled', true);
+          socket.on('shortened', function (base64) {
+            console.log(base64);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

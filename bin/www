@@ -22,6 +22,12 @@ app.set('port', port);
 var server = http.createServer(app);
 
 /**
+ * Attach socket.io to an engine.io instance on HTTP server.
+ */
+
+app.get('socket.io').attach(server);
+
+/**
  * Listen on provided port, on all network interfaces.
  */
 

@@ -26,6 +26,7 @@
   "homepage": "https://github.com/wangxinhe2006/shortened#readme",
   "dependencies": {
     "express": "^4.16.1",
+    "jquery": "^3.4.1",
     "morgan": "^1.9.1",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0"
