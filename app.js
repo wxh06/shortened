@@ -24,7 +24,7 @@ try {
 
 io.on('connection', (socket) => {
   socket.on('submit', (url) => {
-    const base64 = crypto.createHmac('md5', url).digest('base64');
+    const base64 = crypto.createHmac('md5', url).digest('base64').slice(0, -2);// rstrip('=')
     if (!urls[base64]) {
       urls[base64] = url;
     }
