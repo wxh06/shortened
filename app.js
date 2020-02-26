@@ -24,12 +24,9 @@ try {
 
 io.on('connection', (socket) => {
   socket.on('submit', (url) => {
-    let base64 = urls[url];
-    if (base64) {
-      base64 = urls.url;
-    } else {
-      base64 = crypto.createHmac('md5', url).digest('base64');
-      urls[url] = base64;
+    const base64 = crypto.createHmac('md5', url).digest('base64');
+    if (!urls[base64]) {
+      urls[base64] = url;
     }
     fs.promises.writeFile('urls.json', JSON.stringify(urls));
     socket.emit('shortened', base64);
